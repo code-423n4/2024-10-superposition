@@ -14,7 +14,9 @@
 
 The 4naly3er report can be found [here](https://github.com/code-423n4/2024-10-superposition/blob/main/4naly3er-report.md).
 
-Operator makes a mistake with a trusted function
+_Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
+
+Operator makes a mistake with a trusted function.
 
 ✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
 
@@ -321,6 +323,3 @@ make gas
 Employees of Superposition and employees' family members are ineligible to participate in this audit.
 
 Code4rena's rules cannot be overridden by the contents of this README. In case of doubt, please check with C4 staff.
-
-
-_Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
