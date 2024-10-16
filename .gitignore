@@ -1,0 +1,18 @@
+# misc
+.zed/
+.idea/
+
+# pkg
+pkg/target
+pkg/*.wasm
+pkg/*.wasm-small
+pkg/out
+pkg/*.rlib
+/web/.env
+*.zip
+
+# IDE
+.vscode/
+
+.DS_Store
++Errors
