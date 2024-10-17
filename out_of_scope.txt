@@ -115,3 +115,6 @@
 ./pkg/test/LightweightERC20.sol
 ./pkg/test/permit2.sol
 ./tools/ethereum-selector-mine.go
+./pkg/seawater/src/main.rs
+./pkg/seawater/src/vm_hooks.rs
+./pkg/sol/OwnershipNFTs.sol

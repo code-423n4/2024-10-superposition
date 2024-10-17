@@ -53,15 +53,31 @@ See [pkg/README.md](https://github.com/code-423n4/2024-10-superposition/blob/mai
 ### Files in scope
 
 
-✅ - update table
-| File   | Logic Contracts | Interfaces | nSLOC | Purpose | Libraries used |
-| ------ | --------------- | ---------- | ----- | -----   | ------------ |
-| /pkg/seawater/src/lib.rs | ****| **** | 812 | ||
-| /pkg/seawater/src/main.rs | ****| **** | 8 | ||
-| /pkg/seawater/src/maths/mod.rs | ****| **** | 9 | ||
-| /pkg/sol/OwnershipNFTs.sol | 1| **** | 106 | ||
-| /pkg/sol/SeawaterAMM.sol | 2| **** | 290 | ||
-| **Totals** | **3** | **** | **1225** | | |
+| File                                      | SLOC |
+|-------------------------------------------|------|
+| pkg/seawater/src/maths/sqrt_price_math.rs | 1239 |
+| pkg/seawater/src/lib.rs                   | 812  |
+| pkg/seawater/src/pool.rs                  | 428  |
+| pkg/seawater/src/wasm_erc20.rs            | 332  |
+| pkg/seawater/src/maths/swap_math.rs       | 316  |
+| pkg/seawater/src/maths/tick_math.rs       | 254  |
+| pkg/seawater/src/error.rs                 | 151  |
+| pkg/seawater/src/tick.rs                  | 146  |
+| pkg/seawater/src/maths/bit_math.rs        | 138  |
+| pkg/seawater/src/types.rs                 | 112  |
+| pkg/seawater/src/maths/full_math.rs       | 106  |
+| pkg/seawater/src/position.rs              | 87   |
+| pkg/seawater/src/host_erc20.rs            | 58   |
+| pkg/seawater/src/maths/tick_bitmap.rs     | 47   |
+| pkg/seawater/src/maths/liquidity_math.rs  | 37   |
+| pkg/seawater/src/immutables.rs            | 23   |
+| pkg/seawater/src/maths/utils.rs           | 11   |
+| pkg/seawater/src/maths/mod.rs             | 9    |
+| pkg/seawater/src/maths/unsafe_math.rs     | 9    |
+| pkg/seawater/src/permit2_types.rs         | 8    |
+| pkg/seawater/src/erc20.rs                 | 5    |
+| pkg/seawater/src/events.rs                | 3    |
+| Total                                     | 4331 |
 
 ### Files out of scope
 
