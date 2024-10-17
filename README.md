@@ -19,6 +19,7 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 * It is possible for someone to grief the protocol by creating a pool with bad configuration.
 * It is possible for the permissioned account to do things to grief the protocol.
 * Operator makes a mistake with a trusted function
+* It is possible to frontrun certain operater permissioned functions
 
 # Overview
 
@@ -68,7 +69,6 @@ See [pkg/README.md](https://github.com/code-423n4/2024-10-superposition/blob/mai
 | pkg/seawater/src/types.rs                 | 112  |
 | pkg/seawater/src/maths/full_math.rs       | 106  |
 | pkg/seawater/src/position.rs              | 87   |
-| pkg/seawater/src/host_erc20.rs            | 58   |
 | pkg/seawater/src/maths/tick_bitmap.rs     | 47   |
 | pkg/seawater/src/maths/liquidity_math.rs  | 37   |
 | pkg/seawater/src/immutables.rs            | 23   |
@@ -118,11 +118,11 @@ N/A
 
 ## Main invariants
 
-The functionality should be reasonably similar to Uniswap's.
+The concentrated liquidity math should be as reasonably similar to Uniswap's as possible.
 
 ## Attack ideas (where to focus for bugs)
-1. Discrepancy with Uniswap in an end to end environment
-2. Fee taking isn't correct. Full ticks aren't correct
+1. Any discrepancies with Uniswap in an end to end environment
+2. Fee taking isn't correct. Full ticks aren't correct?
 
 
 ## All trusted roles in the protocol
