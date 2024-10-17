@@ -129,6 +129,27 @@ pub unsafe extern "C" fn storage_load_bytes32(key: *const u8, out: *mut u8) {
     unsafe { storage::write_word(out, value) };
 }
 
+
+#[no_mangle]
+pub extern "C" fn msg_reentrant() -> bool {
+    false
+}
+
+#[no_mangle]
+pub extern "C" fn pay_for_memory_grow(_pages: u16) {
+    // Do nothing
+}
+
+#[no_mangle]
+pub extern "C" fn read_args(_dest: *mut u8) {
+    // Do nothing
+}
+
+#[no_mangle]
+pub extern "C" fn write_result(_data: *const u8, _len: usize) {
+    // Do nothing
+}
+
 /// # Safety
 ///
 /// This will set to the pointer given a value that's unpacked from a hashmap here.
