@@ -16,8 +16,9 @@ The 4naly3er report can be found [here](https://github.com/code-423n4/2024-10-su
 
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
-* Operator makes a mistake with a trusted function.
-
+* It is possible for someone to grief the protocol by creating a pool with bad configuration.
+* It is possible for the permissioned account to do things to grief the protocol.
+* Operator makes a mistake with a trusted function
 
 # Overview
 
