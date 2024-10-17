@@ -16,20 +16,29 @@ The 4naly3er report can be found [here](https://github.com/code-423n4/2024-10-su
 
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
-Operator makes a mistake with a trusted function.
+* Operator makes a mistake with a trusted function.
 
-✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
 
 # Overview
 
-[ ⭐️ SPONSORS: add info here ]
+
+Longtail is a concentrated liquidity AMM powered by Arbitrum Stylus. Arbitrum Stylus is a WASM frontend to the EVM on Arbitrum.
+
+Longtail differs from a traditional V3 AMM in the following ways:
+
+1. One contract for everything: Liquidity is centralised in one contract.
+2. One shared asset between every pool: fUSDC is shared between every pool.
+3. Contract addresses are embedded in the compiled code: Contract addresses are set using environment variables.
+4. Native support for permit2: Permit2 is natively supported for a better UX.
+5. Diamond-like proxy for dispatch: A Solidity contract is used to delegatecall to different facets of the contract.
+
+See [pkg/README.md](https://github.com/code-423n4/2024-10-superposition/blob/main/pkg/README.md) for deployment addresses and more details.
 
 ## Links
 
-- **Previous audits:**  https://audits.long.so/
-
-And Codearena audit from before
-  - ✅ SCOUTS: If there are multiple report links, please format them in a list.
+- **Previous audits:**  
+  - https://audits.long.so/
+  - ✅ C4 August audit
 - **Documentation:** https://docs.long.so
 - **Website:** https://superposition.so
 - **X/Twitter:** https://x.com/superpositionso
@@ -44,6 +53,7 @@ And Codearena audit from before
 ### Files in scope
 
 
+✅ - update table
 | File   | Logic Contracts | Interfaces | nSLOC | Purpose | Libraries used |
 | ------ | --------------- | ---------- | ----- | -----   | ------------ |
 | /pkg/seawater/src/lib.rs | ****| **** | 812 | ||
@@ -57,187 +67,20 @@ And Codearena audit from before
 
 *See [out_of_scope.txt](https://github.com/code-423n4/2024-10-superposition/blob/main/out_of_scope.txt)*
 
-| File         |
-| ------------ |
-| ./cmd/faucet.superposition/graph/filter.go |
-| ./cmd/faucet.superposition/graph/filter_test.go |
-| ./cmd/faucet.superposition/graph/generated.go |
-| ./cmd/faucet.superposition/graph/model/models_gen.go |
-| ./cmd/faucet.superposition/graph/resolver.go |
-| ./cmd/faucet.superposition/graph/schema.resolvers.go |
-| ./cmd/faucet.superposition/graph/stakers.go |
-| ./cmd/faucet.superposition/graph/verify-turnstile.go |
-| ./cmd/faucet.superposition/lib/faucet/faucet.go |
-| ./cmd/faucet.superposition/lib/faucet/request.go |
-| ./cmd/faucet.superposition/main.go |
-| ./cmd/faucet.superposition/tools.go |
-| ./cmd/graphql.ethereum/graph/consts.go |
-| ./cmd/graphql.ethereum/graph/generated.go |
-| ./cmd/graphql.ethereum/graph/math.go |
-| ./cmd/graphql.ethereum/graph/mocked.go |
-| ./cmd/graphql.ethereum/graph/model/amount.go |
-| ./cmd/graphql.ethereum/graph/model/liquidity-campaign.go |
-| ./cmd/graphql.ethereum/graph/model/liquidity.go |
-| ./cmd/graphql.ethereum/graph/model/models_gen.go |
-| ./cmd/graphql.ethereum/graph/model/pagination.go |
-| ./cmd/graphql.ethereum/graph/model/pool-config.go |
-| ./cmd/graphql.ethereum/graph/model/price.go |
-| ./cmd/graphql.ethereum/graph/model/price_test.go |
-| ./cmd/graphql.ethereum/graph/model/seawater.go |
-| ./cmd/graphql.ethereum/graph/model/swaps.go |
-| ./cmd/graphql.ethereum/graph/model/token.go |
-| ./cmd/graphql.ethereum/graph/model/wallet.go |
-| ./cmd/graphql.ethereum/graph/resolver.go |
-| ./cmd/graphql.ethereum/graph/schema.resolvers.go |
-| ./cmd/graphql.ethereum/lib/erc20/erc20.go |
-| ./cmd/graphql.ethereum/lib/erc20/erc20_test.go |
-| ./cmd/graphql.ethereum/main.go |
-| ./cmd/graphql.ethereum/pools.go |
-| ./cmd/graphql.ethereum/tools.go |
-| ./cmd/ingestor.logs.ethereum/func.go |
-| ./cmd/ingestor.logs.ethereum/func_test.go |
-| ./cmd/ingestor.logs.ethereum/main.go |
-| ./cmd/ingestor.logs.ethereum/polling-db.go |
-| ./cmd/ingestor.logs.ethereum/reflect.go |
-| ./cmd/snapshot.ethereum/database.go |
-| ./cmd/snapshot.ethereum/main.go |
-| ./cmd/snapshot.ethereum/rpc.go |
-| ./cmd/snapshot.ethereum/rpc_test.go |
-| ./lib/config/config.go |
-| ./lib/config/defaults.go |
-| ./lib/config/pools.go |
-| ./lib/events/erc20/erc20.go |
-| ./lib/events/erc20/types.go |
-| ./lib/events/events.go |
-| ./lib/events/fluidity/fluidity.go |
-| ./lib/events/fluidity/types.go |
-| ./lib/events/leo/leo.go |
-| ./lib/events/leo/leo_test.go |
-| ./lib/events/leo/types.go |
-| ./lib/events/multicall/multicall.go |
-| ./lib/events/multicall/types.go |
-| ./lib/events/seawater/seawater.go |
-| ./lib/events/seawater/seawater_test.go |
-| ./lib/events/seawater/types.go |
-| ./lib/events/thirdweb/thirdweb.go |
-| ./lib/events/thirdweb/types.go |
-| ./lib/features/features.go |
-| ./lib/features/features_test.go |
-| ./lib/features/list.go |
-| ./lib/heartbeat/heartbeat.go |
-| ./lib/math/concentrated-liq.go |
-| ./lib/math/concentrated-liq_test.go |
-| ./lib/math/decimals.go |
-| ./lib/math/decimals_test.go |
-| ./lib/setup/setup.go |
-| ./lib/types/erc20/erc20.go |
-| ./lib/types/seawater/classifications.go |
-| ./lib/types/seawater/seawater.go |
-| ./lib/types/types.go |
-| ./pkg/leo/src/calldata.rs |
-| ./pkg/leo/src/calldata_seawater.rs |
-| ./pkg/leo/src/erc20.rs |
-| ./pkg/leo/src/error.rs |
-| ./pkg/leo/src/events.rs |
-| ./pkg/leo/src/host.rs |
-| ./pkg/leo/src/host_seawater.rs |
-| ./pkg/leo/src/immutables.rs |
-| ./pkg/leo/src/lib.rs |
-| ./pkg/leo/src/main.rs |
-| ./pkg/leo/src/maths.rs |
-| ./pkg/leo/src/nft_manager.rs |
-| ./pkg/leo/src/seawater.rs |
-| ./pkg/leo/src/wasm_seawater.rs |
-| ./pkg/leo/tests/lib.rs |
-| ./pkg/seawater/src/test_shims.rs |
-| ./pkg/seawater/src/test_utils.rs |
-| ./pkg/seawater/tests/get-liq-for-amounts.rs |
-| ./pkg/seawater/tests/lib-end-to-end-proptest.rs |
-| ./pkg/seawater/tests/lib-high-level-tests.rs |
-| ./pkg/seawater/tests/math-proptest.rs |
-| ./pkg/seawater/tests/pools.rs |
-| ./pkg/seawater/tests/reference/full_math.rs |
-| ./pkg/seawater/tests/reference/mod.rs |
-| ./pkg/seawater/tests/reference/tick_math.rs |
-| ./pkg/seawater/tests/reference_impls.rs |
-| ./pkg/sol/Faucet.sol |
-| ./pkg/sol/IERC165.sol |
-| ./pkg/sol/IERC20.sol |
-| ./pkg/sol/IERC721Metadata.sol |
-| ./pkg/sol/IERC721TokenReceiver.sol |
-| ./pkg/sol/IFaucet.sol |
-| ./pkg/sol/ILeo.sol |
-| ./pkg/sol/ILeoEvents.sol |
-| ./pkg/sol/ISeawater.sol |
-| ./pkg/sol/ISeawaterAMM.sol |
-| ./pkg/sol/ISeawaterEvents.sol |
-| ./pkg/sol/ISeawaterExecutors.sol |
-| ./pkg/sol/ISeawaterMigrations.sol |
-| ./pkg/test/LightweightERC20.sol |
-| ./pkg/test/permit2.sol |
-| ./tools/ethereum-selector-mine.go |
-| Totals: 117 |
 
 ## Scoping Q &amp; A
 
 ### General questions
-### Are there any ERC20's in scope?: Yes
 
-✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
-
-Specific tokens (please specify)
-USDC
-
-### Are there any ERC777's in scope?: No
-
-✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
-
-OwnershipNFTs
-
-### Are there any ERC721's in scope?: Yes
-
-✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
-
-OwnershipNFTs
-
-### Are there any ERC1155's in scope?: No
-
-✅ SCOUTS: If the answer above 👆 is "Yes", please add the tokens below 👇 to the table. Otherwise, update the column with "None".
-
-
-
-✅ SCOUTS: Once done populating the table below, please remove all the Q/A data above.
 
 | Question                                | Answer                       |
 | --------------------------------------- | ---------------------------- |
-| ERC20 used by the protocol              |       🖊️             |
-| Test coverage                           | ✅ SCOUTS: Please populate this after running the test coverage command                          |
-| ERC721 used  by the protocol            |            🖊️              |
-| ERC777 used by the protocol             |           🖊️                |
-| ERC1155 used by the protocol            |              🖊️            |
-| Chains the protocol will be deployed on | OtherSuperposition testnet and mainnet  |
-
-### ERC20 token behaviors in scope
-
-| Question                                                                                                                                                   | Answer |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| [Missing return values](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#missing-return-values)                                                      |   Out of scope  |
-| [Fee on transfer](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#fee-on-transfer)                                                                  |  Out of scope  |
-| [Balance changes outside of transfers](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#balance-modifications-outside-of-transfers-rebasingairdrops) | Out of scope    |
-| [Upgradeability](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#upgradable-tokens)                                                                 |   Out of scope  |
-| [Flash minting](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#flash-mintable-tokens)                                                              | Out of scope    |
-| [Pausability](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#pausable-tokens)                                                                      | Out of scope    |
-| [Approval race protections](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#approval-race-protections)                                              | Out of scope    |
-| [Revert on approval to zero address](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-approval-to-zero-address)                            | Out of scope    |
-| [Revert on zero value approvals](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-zero-value-approvals)                                    | Out of scope    |
-| [Revert on zero value transfers](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-zero-value-transfers)                                    | Out of scope    |
-| [Revert on transfer to the zero address](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-transfer-to-the-zero-address)                    | Out of scope    |
-| [Revert on large approvals and/or transfers](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-large-approvals--transfers)                  | Out of scope    |
-| [Doesn't revert on failure](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#no-revert-on-failure)                                                   |  Out of scope   |
-| [Multiple token addresses](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-zero-value-transfers)                                          | Out of scope    |
-| [Low decimals ( < 6)](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#low-decimals)                                                                 |   Out of scope  |
-| [High decimals ( > 18)](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#high-decimals)                                                              | Out of scope    |
-| [Blocklists](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#tokens-with-blocklists)                                                                | Out of scope    |
+| ERC20 used by the protocol              |       USDC             |
+| Test coverage                           |       N/A                          |
+| ERC721 used  by the protocol            |            OwnershipNFTs              |
+| ERC777 used by the protocol             |           None                |
+| ERC1155 used by the protocol            |              None            |
+| Chains the protocol will be deployed on | Superposition   |
 
 ### External integrations (e.g., Uniswap) behavior in scope:
 
@@ -252,12 +95,6 @@ OwnershipNFTs
 ### EIP compliance checklist
 N/A
 
-✅ SCOUTS: Please format the response above 👆 using the template below👇
-
-| Question                                | Answer                       |
-| --------------------------------------- | ---------------------------- |
-| src/Token.sol                           | ERC20, ERC721                |
-| src/NFT.sol                             | ERC721                       |
 
 
 # Additional context
@@ -266,58 +103,39 @@ N/A
 
 The functionality should be reasonably similar to Uniswap's.
 
-
-✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
-
 ## Attack ideas (where to focus for bugs)
 1. Discrepancy with Uniswap in an end to end environment
 2. Fee taking isn't correct. Full ticks aren't correct
 
-✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
 
 ## All trusted roles in the protocol
 
-Operator, emergency council, ownership NFTs
-
-✅ SCOUTS: Please format the response above 👆 using the template below👇
-
-| Role                                | Description                       |
-| --------------------------------------- | ---------------------------- |
-| Owner                          | Has superpowers                |
-| Administrator                             | Can change fees                       |
+| Role                                    |  Description                                                    |
+| --------------------------------------- | --------------------------------------------------------------- |
+| Operator                                | Controls access to the repo, and implementation addresses.      |
+| Emergency Council                       | Can shut the dapp down if needed.                               |
+| NFT manager                             | Allows addresses to control their ownership of assets as a NFT. |
 
 ## Describe any novel or unique curve logic or mathematical models implemented in the contracts:
 
 Concentrated liquidity math
 
-✅ SCOUTS: Please format the response above 👆 so its not a wall of text and its readable.
 
 ## Running tests
 
-It's difficult to build the contract on its own, so it's best to simply run ./tests.sh inside the pkg directory.
+See [pkg/README](https://github.com/code-423n4/2024-10-superposition/blob/main/pkg/README.md#building) for a detailed explanation
 
-✅ SCOUTS: Please format the response above 👆 using the template below👇
 
-```bash
-git clone https://github.com/code-423n4/2023-08-arbitrum
-git submodule update --init --recursive
-cd governance
-foundryup
-make install
-make build
-make sc-election-test
-```
-To run code coverage
-```bash
-make coverage
-```
-To run gas benchmarks
-```bash
-make gas
-```
 
-✅ SCOUTS: Add a screenshot of your terminal showing the gas report
-✅ SCOUTS: Add a screenshot of your terminal showing the test coverage
+Then run the following command:
+```bash
+https://github.com/code-423n4/2024-10-superposition
+cd 2024-10-superposition/pkg
+rustup target add wasm32-unknown-unknown
+cargo install cargo-stylus
+./tests.sh # this would test the rust files from the files in `tests`.
+
+```
 
 ## Miscellaneous
 Employees of Superposition and employees' family members are ineligible to participate in this audit.
