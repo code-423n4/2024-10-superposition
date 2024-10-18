@@ -78,7 +78,7 @@ See [pkg/README.md](https://github.com/code-423n4/2024-10-superposition/blob/mai
 | pkg/seawater/src/permit2_types.rs         | 8    |
 | pkg/seawater/src/erc20.rs                 | 5    |
 | pkg/seawater/src/events.rs                | 3    |
-| Total                                     | 4331 |
+| Total                                     | 4273 |
 
 ### Files out of scope
 
