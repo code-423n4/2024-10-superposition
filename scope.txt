@@ -1,7 +1,6 @@
 pkg/seawater/src/erc20.rs
 pkg/seawater/src/error.rs
 pkg/seawater/src/events.rs
-pkg/seawater/src/host_erc20.rs
 pkg/seawater/src/immutables.rs
 pkg/seawater/src/lib.rs
 pkg/seawater/src/maths/bit_math.rs

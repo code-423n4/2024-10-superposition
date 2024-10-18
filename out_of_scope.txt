@@ -118,3 +118,4 @@
 ./pkg/seawater/src/main.rs
 ./pkg/seawater/src/vm_hooks.rs
 ./pkg/sol/OwnershipNFTs.sol
+./pkg/seawater/src/host_erc20.rs
