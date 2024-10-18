@@ -40,7 +40,7 @@ See [pkg/README.md](https://github.com/code-423n4/2024-10-superposition/blob/mai
 
 - **Previous audits:**  
   - https://audits.long.so/
-  - ✅ C4 August audit
+  - [Code4rena audit: August 2024](https://code4rena.com/reports/2024-08-superposition)
 - **Documentation:** https://docs.long.so
 - **Website:** https://superposition.so
 - **X/Twitter:** https://x.com/superpositionso
