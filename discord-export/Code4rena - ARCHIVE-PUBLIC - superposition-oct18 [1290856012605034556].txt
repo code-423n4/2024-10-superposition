@@ -1,0 +1,194 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-PUBLIC / superposition-oct18
+==============================================================
+
+[10/16/2024 21:31] itsmetechjay
+👋 Hello and welcome to the audit channel for the **$21,000 in USDC Superposition** audit!
+
+📆 Audit opens Friday, 18 October 2024 20:00 (20:00 UTC) and runs through Friday, 01 November 2024 20:00 (20:00 UTC) (14 days).
+
+Please give a warm welcome to the Superposition team, particularly @bayge, who will be available for questions either here in the channel or via a PRIVATE thread in the ACST timezone(s). 
+
+🤖 **Documentation bot assistance:** For general questions about the codebase, give our documentation bot a try, by tagging `@Docs Wolf` in any thread (private or public) and asking your question. The bot will make its best attempt to answer based on the codebase and documentation, and link you to relevant resources.  
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this audit, consider enabling notifications for this channel. 🐺 ⏰
+
+Audit Page: https://code4rena.com/audits/2024-10-superposition
+
+
+[10/17/2024 05:16] bayge
+hello everyone!
+
+{Reactions}
+🫡 (10) peepoHuggie (3) 
+
+[10/20/2024 00:44] shealtielanz
+Channel is empty but so many questions thrown behind the scenes 😆
+Good luck everyone 🚀
+
+{Reactions}
+👍🏻 (3) 🫶 
+
+[10/21/2024 16:26] aerialraider
+trying to run the test, and I get this error,   cargo test
+warning: patch for `alloy-primitives` uses the features mechanism. default-features and features will not take effect because the patch dependency does not support this mechanism
+error: failed to resolve patches for `https://github.com/rust-lang/crates.io-index`
+
+
+[10/24/2024 04:00] bayge
+could you share more info about your host environment and if you can tests using tests.sh?
+
+
+[10/24/2024 13:26] thebrittfactor
+@aerialraider ^
+
+
+[10/24/2024 15:05] aerialraider
+I tried it on git bash, vs code with wsl and and using a Linux terminal and VS code .
+
+
+[10/24/2024 17:45] aerialraider
+The error, was when trying to get the test to pass
+
+
+[10/24/2024 17:55] aerialraider
+@bayge that was 3 days ago, I'd like to work on it, I did my best to search and use chat gtp.  I'm not really getting any help from the group.. moving on I guess
+
+{Reactions}
+👍 
+
+[10/25/2024 08:08] .nnez
+Have you tried `cargo update`?
+
+{Reactions}
+👍 
+
+[10/25/2024 15:20] aerialraider
+Yep, tried updating cargo
+
+
+[10/30/2024 17:11] gbadebos
+Hello @bayge CC: @Jay | C4 are there supposed to be some solidity files in this competition.  Because the submission page indicates that sol files are included as depicted in screen dump attached. But I do not see any solidity files in the competition.
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - superposition-oct18 [1290856012605034556].txt_Files/Screenshot_2024-10-30_at_17.08.44-BA9CE.png
+
+
+[10/30/2024 17:18] proxima_0x
+@🧺 picnic no thread contest for superposition ❓🌚
+
+
+[10/30/2024 18:42] realfakepicnic
+Nope, not for this one 🙂
+
+{Reactions}
+🫡 (2) 
+
+[10/30/2024 18:42] proxima_0x
+Okay.
+Looking forward to more thread contests 😊
+
+{Reactions}
+💜 
+
+[10/31/2024 03:07] bayge
+not this time. though you might notice that the entrypoint at SeawaterAMM.sol is used to get into all the functions 🙂
+
+{Reactions}
+thankyou (2) 👍 (2) 
+
+[11/01/2024 15:56] aerialraider
+No help here
+
+
+[11/01/2024 20:02] C4
+**🚨 AUDIT ALERT**
+
+@🐺Wardens The **Superposition** audit is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks.
+
+
+[11/02/2024 08:00] bayge
+you have a nonstandard environment and your issue lies with the rest of the rust toolchain unfortunately. i wish we could help, but if you're having issues with cargo not knowing how to pull git repositories that's another story 😦
+
+
+[11/02/2024 12:09] aerialraider
+How do you know i have a non standard environment? I used Linux... And i pulled the repo fine
+
+
+[11/02/2024 12:10] aerialraider
+And the contest is over, and now you respond
+
+
+[11/03/2024 05:10] bayge
+with a linux host or the wsl environment?
+
+
+[11/26/2024 06:20] tigerfrake
+Can I type wen? 🥲
+
+{Reactions}
+🎉 (3) 
+
+[11/26/2024 23:14] thebrittfactor
+🤑 🎉  Awards for **Superposition #2**:
+
+$9,811.41 USDC » @DadeKuma 
+$4,817.03 USDC » @ZanyBonzy 
+$2,278.38 USDC » @Tigerfrake 
+$493.18 USDC » @Q7
+
+🏁 Findings summary
+--------------------------------------
+3 High risk findings
+3 Med risk findings
+11 wardens contributed
+
+Top Hunter: DadeKuma
+Top Gatherer: DadeKuma
+
+Awards will be distributed on Polygon within the next week. Congratulations all!  💸 💸 💸
+
+⚠️ Awardees, be sure to [complete your tax reporting info](https://docs.code4rena.com/awarding/incentive-model-and-awards/awarding-process#tax-information-for-code4rena-contributors-wardens-judges-etc) if you haven't already. This must be completed within 30 days (i.e. before Thursday, 26 December 2024) to receive your award distribution for this audit.
+
+*Note: If you participated in this audit and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+🔥 (3) 
+
+[11/27/2024 01:53] tigerfrake
+Congratulations all. Learnt alot from my 1st rust contest.
+@DadeKuma 🫡
+
+{Reactions}
+🔥 (8) 
+
+[11/27/2024 10:27] cloudellie
+Congrats! There's another Rust audit kicking off on Friday! 😄
+
+{Reactions}
+😎 👀 
+
+[11/29/2024 23:59] mmsaki
+congrats @DadeKuma @ZanyBonzy @Tigerfrake
+
+{Reactions}
+😎 thankyou 
+
+[12/04/2024 13:53] tigerfrake
+Can I type wen? 🥲
+
+
+[12/05/2024 23:09] itsmetechjay
+ℹ️ This channel is pending archive.   As a result, any private threads will be permanently deleted 12/13/2024 23:08. Please make sure to grab anything you might need before then.
+
+
+[12/12/2024 18:22] itsmetechjay
+ℹ️ Reminder: this channel will be deleted after 24 hours.
+
+
+==============================================================
+Exported 30 message(s)
+==============================================================
